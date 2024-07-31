@@ -40,6 +40,3 @@ namespace League
   }
 }
 
-afj;lkdsajf;kdsajf;dsaj
-abcdef123456789
-wowowowowowowow
