@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("League")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03c8d9a30b007580fbd647c002d67e6822b39723")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1e53be737c980d7bd8bd8ef289257362591b475")]
 [assembly: System.Reflection.AssemblyTitleAttribute("League.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

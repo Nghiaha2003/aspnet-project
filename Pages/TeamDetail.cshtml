@@ -1,0 +1,41 @@
+﻿@page "{id}"
+@model TeamDetailModel
+@{
+    ViewData["Title"] = "Team Detail";
+}
+<h1>Welcome to the @Html.DisplayNameFor(model => model.Team.Name)</h1>
+
+<div class="text-center">
+
+    <img src="..\..\image\nfl\logo\@(Model.Team.TeamId).png">
+    <div> Location: 
+        @Model.Team.Location
+    </div>
+    <div> Name:
+        @Model.Team.Name
+    </div>
+
+    <div class="d-flex bg-success text-white">
+        <div class="p-2" style="flex:0 0 10%">Number</div>
+        <div class="p-2" style="flex:0 0 25%">Name</div>
+        <div class="p-2" style="flex:0 0 10%">Age</div>
+        <div class="p-2" style="flex:0 0 10%">Position</div>
+        <div class="p-2" style="flex:0 0 25%">Experience</div>
+        <div class="p-2" style="flex:0 0 10%">Rank</div>
+        <div class="p-2" style="flex:0 0 10%">Rating</div>
+    </div>
+
+    @foreach (Player Player in Model.Team.Players)
+    {
+        <div class="d-flex border-left border-right border-bottom border-primary asp-page="/Player" asp-route-id="@Player.PlayerId">
+            <div class="p-2" style="flex:0 0 10%">@Player.Number</div>
+            <div class="p-2" style="flex:0 0 25%">@Player.Name</div>
+            <div class="p-2" style="flex:0 0 10%">@Player.Age</div>
+            <div class="p-2" style="flex:0 0 10%">@Player.Position</div>
+            <div class="p-2" style="flex:0 0 25%">@Player.Experience</div>
+            <div class="p-2" style="flex:0 0 10%">@Player.Rank</div>
+            <div class="p-2" style="flex:0 0 10%">@Player.Rating</div>
+          </div>
+    }
+
+</div>

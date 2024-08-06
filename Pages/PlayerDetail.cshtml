@@ -1,0 +1,24 @@
+﻿@page "{id}"
+@model PlayerModel
+
+@{
+    ViewData["Title"] = @Html.DisplayFor(model => model.Player.Name);
+}
+
+<div class="align-items-center">
+    <h1 class="display-4">
+        <img src="/image/nfl/logo/@(Model.Player.TeamId).png">
+        Number: @Html.DisplayFor(model => model.Player.Number)
+        Name: @Html.DisplayFor(model => model.Player.Name)
+    </h1>
+</div>
+
+<div class="align-items-center">
+    <div>Position: @Model.Player.Position</div>
+    <div>Experience: @Model.Player.Experience</div>
+    <div>College: @Model.Player.College</div>
+    <div>Height: @Model.Player.Height</div>
+    <div>Weight: @Model.Player.Weight</div>
+    <div>Age: @Model.Player.Age</div>
+    <div>Birthday: @Model.Player.BirthDate</div>
+</div>
