@@ -3,3 +3,7 @@
 @{
 }
 <h1>welcome to Team details page - duong</h1>
+@foreach (Team item in Model.Teams)
+{
+    <div>@item.TeamId</div>
+}
