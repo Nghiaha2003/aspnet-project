@@ -247,3 +247,4 @@ C:\Users\nhokc\source\repos\aspnet-project\obj\Debug\netcoreapp3.1\League.genrun
 >>>>>>> d8df08652f8f9df352bab053cb8631ff3cfd76e4
 C:\Users\Admin\Documents\project1\obj\Debug\netcoreapp3.1\Razor\Pages\Team.cshtml.g.cs
 C:\Users\Admin\Documents\project1\obj\Debug\netcoreapp3.1\Razor\Pages\TeamDetail.cshtml.g.cs
+C:\Users\Admin\Documents\project1\obj\Debug\netcoreapp3.1\Razor\Pages\PlayerDetail.cshtml.g.cs

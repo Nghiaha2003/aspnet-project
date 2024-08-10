@@ -1,6 +1,8 @@
 using League.Data;
+using League.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
 
 namespace League.Pages
 {
@@ -12,8 +14,10 @@ namespace League.Pages
         {
             _context = context;
         }
-        public void OnGet()
+        public Team Team { get; set;}
+        public async Task OnGetAsync(string Id)
         {
+            Team = await _context.Teams.FindAsync(Id); //use Team
         }
     }
 }
