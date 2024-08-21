@@ -25,8 +25,6 @@ namespace League.Pages
         _context = context;
     }
 
-        public League League { get; set; }
-
         public void OnGet()
     {
 
