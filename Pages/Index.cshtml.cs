@@ -13,16 +13,12 @@ namespace League.Pages
   {
     private readonly ILogger<IndexModel> _logger;
 
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-      _logger = logger;
-    }
-
     private readonly LeagueContext _context;
 
-    public IndexModel(LeagueContext context)
+        public IndexModel(ILogger<IndexModel> logger, LeagueContext context)
     {
-        _context = context;
+      _logger = logger;
+      _context = context;
     }
 
         public void OnGet()
