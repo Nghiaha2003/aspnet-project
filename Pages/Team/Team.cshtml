@@ -3,6 +3,31 @@
 @{
 }
 <h1>Team Page</h1>
+<div class="jumbotron p-3">
+    <div class="d-flex align-items-center">
+        <h1 class="display-4" flex-grow-1">
+            Team List
+        </h1>
+        <a class="btn btn-primary btn-sm">
+            Create
+        </a>
+    </div>
+</div>
+
+<div class="d-flex bg-success text-white">
+  <div class="p-2" style="flex:0 0 10%">
+    TeamId
+  </div>
+  <div class="p-2" style="flex:0 0 10%">
+    Name
+  </div>
+  <div class="p-2" style="flex:1 0 auto">
+    Stadium
+  </div>
+  <div class="p-2" style="flex:0 0 25%">
+    Options
+  </div>
+</div>
 
 @foreach (var item in Model.Teams)
 {
@@ -13,8 +38,14 @@
         <div class="p-2" style="flex:0 0 10%">
             @item.Name
         </div>
-        <form>
-            <a class="btn btn-primary btn-sm" asp-page="./TeamDetail" asp-route-id="@item.TeamId"></a>
+        <div class="p-2" style="flex:1 0 auto">
+            @item.Stadium
+        </div>
+        <form method="post" class ="p-2 btn-group" style="flex:0 0 25%" role="group">
+            <a class="btn btn-primary btn-sm" asp-page="./TeamDetail" asp-route-id="@item.TeamId">Team Details</a>
+            <a class="btn btn-primary btn-sm" asp-page="./TeamDetail" asp-route-id="@item.TeamId">Edit</a>
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+            <input type="hidden" name="TeamId" value="@item.TeamId"/>
         </form>
     </div>
 }

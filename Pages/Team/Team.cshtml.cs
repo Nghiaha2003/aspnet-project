@@ -30,5 +30,6 @@ namespace League.Pages.Team
 
             Teams = await teams.ToListAsync();
         }
+
     }
 }
