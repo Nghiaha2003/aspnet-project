@@ -49,8 +49,21 @@ namespace League.Pages.Team
                     break;
             }
 
+            if(!string.IsNullOrEmpty(SelectedDivision))
+            {
+                teams = teams.Where(c => c.DivisionId ==  SelectedDivision);
+            }
+
+            IQueryable<string> DivisionQuery = from c in _context.Divisions
+                                             orderby c.DivisionId
+                                             select c.DivisionId;
+            Divisions = new SelectList(await DivisionQuery.ToListAsync());
             Teams = await teams.ToListAsync();
         }
 
+    public SelectList Divisions { get; set; }
+
+    [BindProperty(SupportsGet =true)]
+    public string SelectedDivision { get; set; }
     }
 }

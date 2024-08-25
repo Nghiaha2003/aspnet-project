@@ -12,7 +12,15 @@
             Create
         </a>
        <form class="form-group">
-        <label asp-for="SearchString" class="control-label">
+        <label asp-for="SelectedDivision" class="control-label">
+            Division:
+        </label>
+        <select class="p-2" asp-for="SelectedDivision" asp-items="Model.Divisions" onchange="this.form.submit();">
+            <option value="">
+                All
+            </option>
+        </select>
+            <label asp-for="SearchString" class="control-label">
             Name:
         </label>
             <input class="p-2" type="text" asp-for="SearchString" />
@@ -40,7 +48,7 @@
     Name
   </div>
   <div class="p-2" style="flex:1 0 auto">
-    Stadium
+    Division
   </div>
   <div class="p-2" style="flex:0 0 25%">
     Options
@@ -57,7 +65,7 @@
             @item.Name
         </div>
         <div class="p-2" style="flex:1 0 auto">
-            @item.Stadium
+            @item.DivisionId
         </div>
         <form method="post" class ="p-2 btn-group" style="flex:0 0 25%" role="group">
             <a class="btn btn-primary btn-sm" asp-page="./TeamDetail" asp-route-id="@item.TeamId">Team Details</a>
@@ -67,3 +75,4 @@
         </form>
     </div>
 }
+
