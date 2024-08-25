@@ -16,8 +16,14 @@ namespace League.Pages.Team
     public class TeamModel : PageModel
     {
         private readonly ILogger<TeamModel> _logger;
+
         private readonly LeagueContext _context;
+
         public List<Models.Team> Teams { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+
         public TeamModel(ILogger<TeamModel> logger, LeagueContext context)
         {
             _logger = logger;
@@ -27,6 +33,10 @@ namespace League.Pages.Team
         {
             var teams = from c in _context.Teams
                         select c;
+            if(!string.IsNullOrEmpty(SearchString))
+            {
+                teams = teams.Where(c => c.Name.Contains(SearchString));
+            }
 
             Teams = await teams.ToListAsync();
         }
