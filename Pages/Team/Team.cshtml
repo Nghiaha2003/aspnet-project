@@ -11,11 +11,24 @@
         <a class="btn btn-primary btn-sm">
             Create
         </a>
+       <form class="form-group">
         <label asp-for="SearchString" class="control-label">
-            Search by Name:
+            Name:
         </label>
             <input class="p-2" type="text" asp-for="SearchString" />
             <input class="btn btn-primary btn-sm" type="submit" value="Search" />
+        <label asp-for="SortField" class="control-label">
+            Sort By:
+        </label>
+            <select class="p-2" asp-for="SortField" onchange="this.form.submit();">
+                <option value="TeamId">
+                    Code
+                </option>
+                <option value="Name">
+                    TeamName
+                </option>
+            </select> 
+        </form>
     </div>
 </div>
 

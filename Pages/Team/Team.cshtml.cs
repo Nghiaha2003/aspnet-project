@@ -23,6 +23,8 @@ namespace League.Pages.Team
 
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string SortField { get; set; }
 
         public TeamModel(ILogger<TeamModel> logger, LeagueContext context)
         {
@@ -36,6 +38,15 @@ namespace League.Pages.Team
             if(!string.IsNullOrEmpty(SearchString))
             {
                 teams = teams.Where(c => c.Name.Contains(SearchString));
+            }
+            switch (SortField)
+            {
+                case "TeamId":
+                    teams = teams.OrderBy(c => c.TeamId);
+                    break;
+                case "Name":
+                    teams = teams.OrderBy(c => c.Name);
+                    break;
             }
 
             Teams = await teams.ToListAsync();
