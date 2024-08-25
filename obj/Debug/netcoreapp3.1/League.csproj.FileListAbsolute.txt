@@ -66,8 +66,6 @@ C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\n
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Team.cshtml.g.cs
-C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\TeamDetail.cshtml.g.cs
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\League.RazorTargetAssemblyInfo.cache
@@ -83,3 +81,5 @@ C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\n
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\League.dll
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\League.pdb
 C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\League.genruntimeconfig.cache
+C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Team\Team.cshtml.g.cs
+C:\Users\nhokc\Documents\Australia-related Doc\JRM IT\aspnet-project\obj\Debug\netcoreapp3.1\Razor\Pages\Team\TeamDetail.cshtml.g.cs

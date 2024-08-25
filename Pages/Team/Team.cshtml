@@ -1,0 +1,20 @@
+﻿@page
+@model TeamModel
+@{
+}
+<h1>Team Page</h1>
+
+@foreach (var item in Model.Teams)
+{
+    <div class="d-flex border-left border-right border-bottom border primary">
+        <div class="p-2" style="flex:0 0 10%">
+            @item.TeamId
+        </div>
+        <div class="p-2" style="flex:0 0 10%">
+            @item.Name
+        </div>
+        <form>
+            <a class="btn btn-primary btn-sm" asp-page="./TeamDetail" asp-route-id="@item.TeamId"></a>
+        </form>
+    </div>
+}

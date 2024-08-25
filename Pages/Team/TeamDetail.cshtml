@@ -34,7 +34,7 @@
         <div class="p-2" style="flex:0 0 10%">Rank</div>
         <div class="p-2" style="flex:0 0 10%">Rating</div>
     </div>
-
+@* 
     @foreach (Player Player in Model.Team.Players)
     {
         <div class="d-flex border-left border-right border-bottom border-primary" asp-page="/Player" asp-route-id="@Player.PlayerId">
@@ -47,5 +47,5 @@
             <div class="p-2" style="flex:0 0 10%">@Player.Rating</div>
           </div>
     }
-
+ *@
 </div>
