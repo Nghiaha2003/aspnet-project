@@ -3,6 +3,8 @@ using League.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace League.Pages.Team
 {
@@ -17,9 +19,13 @@ namespace League.Pages.Team
             _context = context;
         }
         public Models.Team Team { get; set; }
-        public async Task OnGetAsync(string Id)
+        public async Task<IActionResult> OnGetAsync(string Id)
         {
-            Team = await _context.Teams.FindAsync(Id); //use Team
+            Team = await _context.Teams
+                .Include(c => c.Players)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.TeamId == Id);
+            return Page();
         }
     }
 }
