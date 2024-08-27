@@ -1,7 +1,7 @@
-﻿@page "{Id}"
+﻿@page "{id}" //id hay Id//
 @model TeamDetailModel
 @{
-    ViewData["Title"] = @Html.DisplayFor(model => model.Team.Name) + " Team Detail";
+    ViewData["Title"] = @Html.DisplayFor(model => model.Team.Name) + " Team Detail"; //nay la gi vay?//
 }
 <h1>Welcome to the @Html.DisplayNameFor(model => model.Team.Name)</h1>
 
@@ -14,6 +14,13 @@
     <div> Name: 
         @Model.Team.Name
     </div>
+
+    <div> 
+        <h1>Winloss ratio of this team: @Model.TeamStat.WinLossRatio</h1>
+
+    </div>
+
+
     <div class="text-center">
         <h2> @Html.DisplayNameFor(model => model.Team.Name) Stadium</h2>
     <img src="/image/nfl/stadium/@(Model.Team.TeamId).jpg">
@@ -35,7 +42,7 @@
         <div class="p-2" style="flex:0 0 10%">Rating</div>
     </div>
 
-    @foreach (Player item in Model.Team.Players)
+    @foreach (Player item in Model.Team.Players) 
     {
         <div class="d-flex border-left border-right border-bottom border-primary" asp-page="/Player" asp-route-id="@item.PlayerId">
             <div class="p-2" style="flex:0 0 10%">@item.Number</div>
@@ -49,4 +56,5 @@
     }
  
     }
+
 </div>
