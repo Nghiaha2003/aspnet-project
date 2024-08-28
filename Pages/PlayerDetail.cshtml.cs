@@ -16,10 +16,12 @@ namespace League.Pages
         }
 
         public Player Player { get; set; }
+        public Team Team { get; set; }
 
         public async Task OnGetAsync(string Id)
         {
             Player = await _context.Players.FindAsync(Id); //use Player
+            Team = await _context.Teams.FindAsync(Player.TeamId);
         }
     }
 }

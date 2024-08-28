@@ -5,20 +5,59 @@
     ViewData["Title"] = @Html.DisplayFor(model => model.Player.Name);
 }
 
-<div class="align-items-center">
-    <h1 class="display-4">
+<style>
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: lightcyan;
+    }
+</style>
+
+<div class=" jumbotron container d-flex flex-column align-items-center">
+    <h2 class="display-3 style=" display: flex; align-items: center; text-align: center;">
         <img src="/image/nfl/logo/@(Model.Player.TeamId).png">
-        Number: @Html.DisplayFor(model => model.Player.Number)
-        Name: @Html.DisplayFor(model => model.Player.Name)
-    </h1>
+            Team @Html.DisplayFor(model => model.Team.Name) NFL 
+    </h2>
 </div>
 
-<div class="align-items-center">
-    <div>Position: @Model.Player.Position</div>
-    <div>Experience: @Model.Player.Experience</div>
-    <div>College: @Model.Player.College</div>
-    <div>Height: @Model.Player.Height</div>
-    <div>Weight: @Model.Player.Weight</div>
-    <div>Age: @Model.Player.Age</div>
-    <div>Birthday: @Model.Player.BirthDate</div>
+<div class="d-flex justify-content-center">
+    <table class="table table-striped table-bordered mx-auto" style=" width: 80%;">
+        <tbody>
+            <tr>
+                <th>Number</th>
+                <td>@Html.DisplayFor(model => model.Player.Number)</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>@Html.DisplayFor(model => model.Player.Name)</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>@Model.Player.Position</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>@Model.Player.Experience</td>
+            </tr>
+            <tr>
+                <th>College</th>
+                <td>@Model.Player.College</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>@Model.Player.Height</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>@Model.Player.Weight</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>@Model.Player.Age</td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>@Model.Player.BirthDate</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

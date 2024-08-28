@@ -1,0 +1,147 @@
+﻿@page
+@model AllPlayersModel
+
+@{
+    ViewData["Title"] = "NFL Players" ;
+}
+
+<style>
+    .starter {
+        font-weight: bold;
+    }
+
+    .favourite {
+        background-color: #ffd700 !important;
+    }
+
+    .favourite:hover {
+        background-color: cyan !important;
+    }
+
+    .player-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        transition: background-color 0.15s ease-in-out;
+        cursor: pointer;
+    }
+
+    .player-row:hover {
+        background-color: cyan;
+    }
+</style>
+
+<div class="jumbotron container d-flex flex-column align-items-center">
+    <h2 class="display-3 my-2" style="display: flex; align-items: center; text-align: center;">
+        <img src="/image/nfl/nfl.png" class="mr-3" style="height: 100px;"> All Players in NFL
+    </h2>
+    <div class="d-flex align-items-center">
+        <form class="form-group asp-action=" Index" method="get">
+            <input type="hidden" asp-for="SortField" />
+            <input type="hidden" asp-for="SelectedPosition" />
+            <input type="hidden" asp-for="SearchString" />
+            <input type="hidden" asp-for="SortDirection" />
+            <label asp-for="SelectedTeam" class="control-label">
+                Team:
+            </label>
+            <select class="p-2 mr-4" asp-for="SelectedTeam" asp-items="Model.Teams" onchange="this.form.submit();">
+                <option value="">All</option>
+            </select>
+        </form>
+        <form class="form-group">
+            <input type="hidden" asp-for="SortField" />
+            <input type="hidden" asp-for="SelectedTeam" />
+            <input type="hidden" asp-for="SearchString" />
+            <input type="hidden" asp-for="SortDirection" />
+            <label asp-for="SelectedPosition" class="control-label">
+                Position:
+            </label>
+            <select class="p-2 mr-4" asp-for="SelectedPosition" asp-items="Model.Positions" onchange="this.form.submit();">
+                <option value="">All</option>
+            </select>
+        </form>
+        <form class="form-group">
+            <input type="hidden" asp-for="SortField" />
+            <input type="hidden" asp-for="SelectedTeam" />
+            <input type="hidden" asp-for="SelectedPosition" />
+            <input type="hidden" asp-for="SortDirection" />
+            <label asp-for="SearchString" class="control-label">
+                Name:
+            </label>
+            
+            <input class="p-2 mr-2" type="text" asp-for="SearchString" />
+            <input type="submit" value="Search" class="btn btn-primary btn-sm mr-4" />
+        </form>
+        <form class="form-group">
+            <input type="hidden" asp-for="SelectedTeam" />
+            <input type="hidden" asp-for="SelectedPosition" />
+            <input type="hidden" asp-for="SearchString" />
+            <input type="hidden" asp-for="SortDirection" />
+            <label asp-for="SortField" class="control-label">
+                Sort by:
+            </label>
+            <select class="p-2 mr-1" asp-for="SortField" onchange="this.form.submit();">
+                <option value="Number">
+                    Number
+                </option>
+                <option value="Name">
+                    Name
+                </option>
+                <option value="Position">
+                    Position
+                </option>
+                <option value="NumberDesc">
+                    Number (desc)
+                </option>
+                <option value="NameDesc">
+                    Name (desc)
+                </option>
+                <option value="PositionDesc">
+                    Position (desc)
+                </option>
+            </select>
+        </form>
+        @*
+        <form class="form-group">
+            <input type="hidden" asp-for="SortField" />
+            <input type="hidden" asp-for="SelectedTeam" />
+            <input type="hidden" asp-for="SelectedPosition" />
+            <input type="hidden" asp-for="SearchString" />
+            <label asp-for="SortDirection" class="control-label" style="display: none;">
+            </label>
+            <select class="p-2" asp-for="SortDirection" onchange="this.form.submit();">
+                <option value="asc">
+                    Ascending
+                </option>
+                <option value="desc">
+                    Descending
+                </option>
+            </select>
+        </form> 
+        *@
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-flex bg-primary text-white" style="display: flex; align-items: center; font-weight: bold">
+        <div class="p-2" style="flex: 0 0 12%; text-align: center;">Team</div>
+        <div class="p-2" style="flex: 0 0 12%; text-align: center;">Number</div>
+        <div class="p-2" style="flex: 0 0 23%; text-align: center;">Name</div>
+        <div class="p-2" style="flex: 0 0 13%; text-align: center;">Position</div>
+        <div class="p-2" style="flex: 0 0 20%; text-align: center;">Experience</div>
+        <div class="p-2" style="flex: 0 0 20%; text-align: center;">College</div>
+    </div>
+
+    @foreach (Player Player in Model.AllPlayers)
+    {
+        <a class="d-flex player-row @Model.PlayerCSSClass(Player)" asp-page="./PlayerDetail" asp-route-id="@Player.PlayerId" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+            <div class="p-2" style="flex: 0 0 12%; text-align: center;">@Player.TeamId</div>
+            <div class="p-2" style="flex: 0 0 12%; text-align: center;">@Player.Number</div>
+            <div class="p-2" style="flex: 0 0 23%; text-align: center;">@Player.Name</div>
+            <div class="p-2" style="flex: 0 0 13%; text-align: center;">@Player.Position</div>
+            <div class="p-2" style="flex: 0 0 20%; text-align: center;">@Player.Experience</div>
+            <div class="p-2" style="flex: 0 0 20%; text-align: center;">@Player.College</div>
+        </a>
+    }
+</div>
